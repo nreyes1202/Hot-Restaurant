@@ -28,18 +28,18 @@ app.get('/home', function (request, response) {
     response.sendFile(viewHtmlPath);
 });
 
-app.get('/make', function (request, response) {
+app.get('/reserve', function (request, response) {
   const viewHtmlPath = path.join(
     __dirname,
-    'make.html'
+    'reserve.html'
   );
   response.sendFile(viewHtmlPath);
 });
 
-app.get('/view', function (request, response) {
+app.get('/tables', function (request, response) {
     const viewHtmlPath = path.join(
       __dirname,
-      'view.html'
+      'tables.html'
     );
     response.sendFile(viewHtmlPath);
   });
