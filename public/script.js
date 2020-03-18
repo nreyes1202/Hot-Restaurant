@@ -16,6 +16,15 @@ app.use(express.json());
 //     __dirname,
 //     fileName
 // );
+const tables = {
+  "table1": {
+    name: "example",
+    email: "example@gmail.com",
+    phonenumber: "(555)555-2121",
+    tablenumber:3,
+    iditem:"76"
+  }
+}
 
 // console.log(filePath);
 // const fileContent = fs.readFileSync(filePath, { encoding: 'utf8' });
@@ -28,20 +37,22 @@ app.get('/home', function (request, response) {
     response.sendFile(viewHtmlPath);
 });
 
-app.get('/make', function (request, response) {
+app.get('/reserve', function (request, response) {
   const viewHtmlPath = path.join(
     __dirname,
-    'make.html'
+    'reserve.html'
   );
+  console.log(viewHtmlPath);
   response.sendFile(viewHtmlPath);
 });
 
-app.get('/view', function (request, response) {
+app.get('/tables', function (request, response) {
     const viewHtmlPath = path.join(
       __dirname,
-      'view.html'
+      'tables.html'
     );
     response.sendFile(viewHtmlPath);
+    response.json(tables);
   });
 
 
